@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Студия маникюра в Москве — концепт сайта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f2;--card:#fff;--ink:#2b1f1d;--mut:#8a7570;--line:#efe3dc;--acc:#b5536b;--acc2:#c96a82;--blush:#f6e6e3;--deep:#3a2420}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.02;letter-spacing:-.01em}
+.demo{background:var(--deep);color:#e6d3cd;font-size:13px;text-align:center;padding:8px 14px}
+.demo b{color:#fff}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,242,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:'Cormorant Garamond';font-size:26px;font-weight:600;letter-spacing:.02em}
+.logo em{color:var(--acc)}
+nav{display:flex;gap:26px}
+nav a{color:var(--mut);font-weight:600;font-size:15px}
+nav a:hover{color:var(--acc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:#fff;font-weight:800;border:0;border-radius:40px;padding:15px 26px;font-size:16px;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--acc2)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.sm{padding:11px 18px;font-size:14px}
+/* hero */
+.hero{padding:48px 0 70px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.kick{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.hero h1{font-size:clamp(48px,8vw,104px);margin:16px 0 18px}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero p{color:var(--mut);font-size:18px;max-width:500px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--blush);border-radius:30px;padding:8px 14px;font-size:14px;font-weight:600}
+.ph{position:relative}
+.ph .main{border-radius:300px 300px 24px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 70px -40px rgba(91,40,40,.45)}
+.ph .main img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:zoom 12s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.ph .tag{position:absolute;left:-10px;bottom:30px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(91,40,40,.35);font-size:14px}
+.ph .tag b{display:block;font-family:'Cormorant Garamond';font-size:28px;color:var(--acc);line-height:1}
+section{padding:84px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.sh h2{font-size:clamp(38px,5.4vw,64px)}
+.sh p{color:var(--mut);max-width:440px}
+/* price */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;color:var(--mut)}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.lvl{display:inline-flex;background:var(--blush);border-radius:30px;padding:4px;margin-bottom:18px}
+.lvl button{border:0;background:none;border-radius:30px;padding:9px 16px;font-weight:700;font-size:14px;cursor:pointer;color:var(--mut)}
+.lvl button.on{background:#fff;color:var(--acc);box-shadow:0 4px 12px -6px rgba(91,40,40,.4)}
+.plist{background:var(--card);border-radius:28px;padding:8px 26px;border:1px solid var(--line)}
+.pr{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:17px 0;border-bottom:1px dashed var(--line)}
+.pr:last-child{border-bottom:0}
+.pr h3{font-family:Manrope;font-size:16px;font-weight:700;letter-spacing:0;line-height:1.35}
+.pr .v{font-family:'Cormorant Garamond';font-size:24px;font-weight:600;color:var(--acc);white-space:nowrap}
+.pr button{background:var(--blush);border:0;color:var(--acc);font-weight:800;border-radius:30px;padding:9px 14px;cursor:pointer;font-size:14px}
+.pr button:hover{background:var(--acc);color:#fff}
+/* gallery */
+.gal{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.gal div{border-radius:24px;overflow:hidden;aspect-ratio:1}
+.gal div:first-child{grid-row:1/3;aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.gal div:hover img{transform:scale(1.06)}
+/* care */
+.care{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.care .im{border-radius:24px;overflow:hidden;aspect-ratio:4/5}
+.care .im img{width:100%;height:100%;object-fit:cover}
+.pts{display:grid;gap:16px}
+.pt{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 22px}
+.pt h3{font-size:26px;margin-bottom:4px}
+.pt p{color:var(--mut);font-size:15px}
+/* subs */
+.subs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sb{background:var(--deep);color:#f1e3de;border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:8px}
+.sb small{color:#c9a9a1;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700}
+.sb b{font-family:'Cormorant Garamond';font-size:40px;color:#fff;font-weight:600;line-height:1}
+.sb p{color:#d6bdb6;font-size:15px}
+/* booking */
+.book{background:var(--card);border:1px solid var(--line);border-radius:30px;display:grid;grid-template-columns:1.4fr 1fr;overflow:hidden;box-shadow:0 40px 70px -50px rgba(91,40,40,.5)}
+.bk{padding:30px}
+.steps{display:flex;gap:6px;margin-bottom:22px}
+.steps i{flex:1;height:4px;border-radius:4px;background:var(--line);transition:background .3s}
+.steps i.on{background:var(--acc)}
+.bk h3{font-size:30px;margin-bottom:2px}
+.hint{color:var(--mut);font-size:14px;margin-bottom:18px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.op{background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:14px;text-align:left;cursor:pointer;transition:.15s;font-size:15px;font-weight:700;line-height:1.3}
+.op small{display:block;color:var(--mut);font-weight:600;font-size:13px;margin-top:4px}
+.op:hover{border-color:#e2b9c2}
+.op.on{border-color:var(--acc);background:var(--blush)}
+.op[disabled]{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.days{grid-template-columns:repeat(7,minmax(0,1fr))}
+.days .op,.times .op{text-align:center;padding:12px 4px}
+.times{grid-template-columns:repeat(auto-fill,minmax(84px,1fr))}
+.fld{display:grid;gap:10px;max-width:420px}
+.fld input{background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:15px;font:16px Manrope;color:var(--ink);width:100%}
+.fld input:focus{outline:none;border-color:var(--acc)}
+.nav2{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px}
+.back{background:none;border:0;color:var(--mut);font-weight:700;cursor:pointer;font-size:15px}
+.ups{margin-top:18px;background:var(--blush);border-radius:18px;padding:16px;display:grid;gap:10px}
+.ups b{color:var(--acc)}
+.ups label{display:flex;gap:12px;align-items:center;cursor:pointer;font-weight:600;font-size:15px}
+.ups input{width:20px;height:20px;accent-color:var(--acc);flex:none}
+.ups small{color:var(--mut)}
+.sum{background:var(--bg);border-left:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:12px}
+.sum h3{font-size:28px}
+.sum .r{display:flex;justify-content:space-between;gap:12px;font-size:15px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sum .r span{color:var(--mut)}
+.sum .r b{text-align:right}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:8px}
+.sum .tot b{font-family:'Cormorant Garamond';font-size:36px;color:var(--acc)}
+.done{text-align:center;padding:30px 10px}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:34px;margin:0 auto 18px;animation:pop .5s}
+@keyframes pop{0%{transform:scale(.3)}70%{transform:scale(1.1)}to{transform:scale(1)}}
+.ct{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ct div{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.ct span{color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.ct b{display:block;font-size:17px;margin-top:6px}
+footer{padding:30px 0 40px;color:var(--mut);font-size:14px}
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav{display:none}
+ .hero .wrap,.book,.care{grid-template-columns:1fr}
+ .ph{max-width:420px;width:100%;margin:0 auto}
+ .subs,.ct{grid-template-columns:1fr}
+ .sum{border-left:0;border-top:1px solid var(--line)}
+ .gal{grid-template-columns:1fr 1fr}
+ .gal div:first-child{grid-column:1/3;grid-row:auto;aspect-ratio:4/3}
+}
+@media(max-width:600px){
+ section{padding:60px 0}
+ .hero{padding:30px 0 50px}
+ .hero p{font-size:16px}
+ .ph .tag{left:8px}
+ .plist{padding:6px 16px}
+ .pr{grid-template-columns:1fr auto}
+ .pr .v{grid-column:1}
+ .pr button{grid-column:2;grid-row:1/3}
+ .bk,.sum{padding:22px}
+ .days{grid-template-columns:repeat(4,minmax(0,1fr))}
+ header .btn.sm{display:none}
+ .mbar{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:45}
+ .mbar .btn{width:100%;box-shadow:0 10px 30px rgba(91,40,40,.35)}
+ footer{padding-bottom:96px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Концепт нового сайта.</b> Услуги, цены и часы работы взяты с сайта студии 18.11.2026. В демо запись никуда не отправляется.</div>
+<header><div class="wrap">
+ <a class="logo" href="#top">Студия <em>маникюра</em></a>
+ <nav><a href="#price">Цены</a><a href="#works">Работы</a><a href="#subs">Абонементы</a><a href="#contacts">Контакты</a></nav>
+ <a class="btn sm" href="#book">Записаться</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+ <div>
+  <div class="kick">Маникюр · педикюр · брови и ресницы</div>
+  <h1>Руки, которые <em>замечают</em></h1>
+  <p>Цены мастера и топ-мастера видны сразу. Выберите услугу и свободное окно за минуту, без звонков и переписки.</p>
+  <div class="cta"><a class="btn" href="#book">Выбрать время</a><a class="btn ghost" href="#price">Цены</a></div>
+  <div class="chips"><span>Каждый день 10:00–22:00</span><span>3 студии в Москве</span><span>−10% на первый визит</span></div>
+ </div>
+ <div class="ph rv"><div class="main"><img src="img/hero.jpg" alt="Нежный маникюр"></div><div class="tag">Маникюр с покрытием<b>от 3 100 ₽</b></div></div>
+</div></section>
+
+<section id="price" style="background:#fff"><div class="wrap">
+ <div class="sh rv"><h2>Услуги и цены</h2><p>Переключите уровень мастера, и цены обновятся. «Записаться» сразу переносит услугу в запись.</p></div>
+ <div class="tabs rv" id="tabs"></div>
+ <div class="lvl rv" id="lvl"><button data-l="0" class="on">Мастер</button><button data-l="1">Топ-мастер</button></div>
+ <div class="plist rv" id="plist"></div>
+</div></section>
+
+<section id="works"><div class="wrap">
+ <div class="sh rv"><h2>Нежно, аккуратно, надолго</h2><p>Дизайн от френча до омбре: подберём к образу на месте.</p></div>
+ <div class="gal rv"><div><img src="img/g1.jpg" alt="Маникюр" loading="lazy"></div><div><img src="img/g2.jpg" alt="Маникюр" loading="lazy"></div><div><img src="img/g3.jpg" alt="Маникюр" loading="lazy"></div><div><img src="img/g4.jpg" alt="Маникюр" loading="lazy"></div><div><img src="img/hero.jpg" alt="Маникюр" loading="lazy" style="object-position:50% 60%"></div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap care">
+ <div class="im rv"><img src="img/proc.jpg" alt="Мастер маникюра за работой" loading="lazy"></div>
+ <div>
+  <div class="sh rv" style="margin-bottom:22px"><h2>Уход, а не только цвет</h2></div>
+  <div class="pts">
+   <div class="pt rv"><h3>Лечебное покрытие StraDerm</h3><p>Лечебное покрытие ногтей: можно добавить к маникюру при записи. 400 ₽.</p></div>
+   <div class="pt rv"><h3>Парафинотерапия</h3><p>Добавляется к маникюру или педикюру. 400 ₽.</p></div>
+   <div class="pt rv"><h3>Smart и STRADERM педикюр</h3><p>С покрытием и без, у мастера или топ-мастера. От 3 200 ₽.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="subs" style="background:#fff"><div class="wrap">
+ <div class="sh rv"><h2>Абонементы и сертификаты</h2><p>Выгодно для постоянных гостей и как подарок.</p></div>
+ <div class="subs">
+  <div class="sb rv"><small>Абонемент ×5</small><b>15 500 ₽</b><p>Снятие, маникюр и покрытие, 5 визитов.</p></div>
+  <div class="sb rv"><small>Абонемент ×10</small><b>30 500 ₽</b><p>Снятие, маникюр и покрытие, 10 визитов.</p></div>
+  <div class="sb rv"><small>Подарочный сертификат</small><b>5 000 / 10 000 ₽</b><p>Красивый подарок на любой праздник.</p></div>
+ </div>
+</div></section>
+
+<section id="book"><div class="wrap">
+ <div class="sh rv"><h2>Онлайн-запись</h2><p>Услуга → мастер → день → время → контакты. Около минуты.</p></div>
+ <div class="book rv"><div class="bk" id="bk"></div><aside class="sum" id="sum"></aside></div>
+</div></section>
+
+<section id="contacts" style="padding-top:0"><div class="wrap">
+ <div class="sh rv"><h2>Контакты</h2></div>
+ <div class="ct rv">
+  <div><span>Студии</span><b>Бескудниковский · Авиатика · Проспект Мира</b></div>
+  <div><span>Адрес</span><b>Москва, Бескудниковский бульвар, 11 к1</b></div>
+  <div><span>Часы</span><b>Ежедневно 10:00–22:00</b></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">Концепт сайта студии маникюра · сделано «Ветер перемен»</div></footer>
+<div class="mbar"><a class="btn" href="#book">Записаться онлайн</a></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ');
+// [услуга, цена мастера, цена топ-мастера] — прайс студии 18.11.2026
+const P={
+ 'Маникюр':[['Маникюр с покрытием гель-лак',3100,3300],['Снятие + маникюр с покрытием гель-лак',3300,3500],['Маникюр + прозрачное покрытие гель-лаком',2300,2400],['Снятие + маникюр + прозрачное покрытие',2500,2600],['Маникюр без покрытия',1500,1600],['Снятие и маникюр без покрытия',2000,2100],['Наращивание ногтей с покрытием',4500,4700],['Снятие, наращивание ногтей, покрытие',4700,4900],['Коррекция наращенных ногтей с покрытием',4300,4500],['Архитектура ногтей',1200,1200],['Мужской маникюр',1600,1600]],
+ 'Педикюр':[['Педикюр с покрытием гель-лак',3500,3700],['Снятие + педикюр с покрытием гель-лак',3700,3900],['Smart-педикюр с покрытием гель-лак',3800,4000],['STRADERM-педикюр с покрытием гель-лак',4000,4200],['Педикюр-экспресс + покрытие',3000,3200],['Педикюр без покрытия',2900,3000],['Smart-педикюр без покрытия',3200,3300],['Педикюр мужской',2700,2700]],
+ 'Брови и ресницы':[['Коррекция бровей + окрашивание хной',1800,1800],['Коррекция бровей + окрашивание краской',1800,1800],['Долговременная укладка + коррекция + окрашивание',3200,3200],['Долговременная укладка бровей',2200,2200],['Коррекция бровей',800,800],['Ламинирование ресниц',3000,3000],['Ламинирование ресниц с ботоксом',3300,3300],['Окрашивание ресниц',900,900],['Мужская коррекция бровей',1500,1500]]
+};
+const ALL=Object.entries(P).flatMap(([k,a])=>a.map(s=>[...s,k]));
+let tab='Маникюр',lvl=0;
+function renderPrice(){
+ $('tabs').innerHTML=Object.keys(P).map(k=>`<button class="tab${k===tab?' on':''}" data-t="${k}">${k}</button>`).join('');
+ $('plist').innerHTML=P[tab].map(s=>`<div class="pr"><h3>${s[0]}</h3><div class="v">${fmt(s[1+lvl])} ₽</div><button data-pick="${s[0]}">Записаться</button></div>`).join('');
+ document.querySelectorAll('#lvl button').forEach(b=>b.classList.toggle('on',+b.dataset.l===lvl));
+}
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(b){tab=b.dataset.t;renderPrice()}});
+$('lvl').addEventListener('click',e=>{const b=e.target.closest('[data-l]');if(b){lvl=+b.dataset.l;renderPrice()}});
+renderPrice();
+// booking
+const M=[['Любой мастер','Ближайшее окно, цена мастера',0],['Мастер','Цены по прайсу мастера',0],['Топ-мастер','Самые опытные мастера студии',1]];
+const st={step:0,svc:null,m:null,d:null,t:null,name:'',tel:'',add:[]};
+const UPS={french:['Покрытие френч',500],ombre:['Дизайн омбре',900],straderm:['Лечебное покрытие StraDerm',400],paraf:['Парафинотерапия',400]};
+const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i);return d});
+const dn=d=>['вс','пн','вт','ср','чт','пт','сб'][d.getDay()];
+const dd=d=>d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');
+const times=['10:00','11:30','13:00','14:30','16:00','17:30','19:00','20:30'];
+const past=t=>{const n=new Date(),[h,m]=t.split(':').map(Number);return h*60+m<=n.getHours()*60+n.getMinutes()+30};
+const busy=(d,i)=>((d*3+i*5+(st.m||0))%4)===0||(d===0&&past(times[i]));
+const svc=()=>ALL.find(s=>s[0]===st.svc);
+const pr=()=>{const s=svc();return s?s[1+(st.m!==null?M[st.m][2]:0)]:0};
+function upsList(){const s=svc();if(!s)return[];if(s[3]==='Маникюр'&&/покрыт|Наращ|Коррекц/i.test(s[0])&&!/прозрачн/i.test(s[0]))return['french','ombre','paraf'];if(s[3]==='Маникюр')return['straderm','paraf'];if(s[3]==='Педикюр')return['paraf'];return[]}
+function render(){
+ const S=st.step;
+ if(S===5){$('bk').innerHTML=`<div class="done"><div class="ok">✓</div><h3>Вы записаны</h3><p class="hint" style="margin-top:8px">${st.svc}, ${M[st.m][0].toLowerCase()}, ${st.d===0?'сегодня':dn(days[st.d])+' '+dd(days[st.d])} в ${st.t}.<br>В демо заявка никуда не отправлена.</p><button class="btn ghost" id="again">Записаться ещё раз</button></div>`;sum();$('again').onclick=()=>{Object.assign(st,{step:0,svc:null,m:null,d:null,t:null,add:[]});render()};return}
+ const bar=`<div class="steps">${[0,1,2,3,4].map(i=>`<i class="${i<=S?'on':''}"></i>`).join('')}</div>`;
+ let h='';
+ if(S===0)h=`<h3>1. Услуга</h3><p class="hint">Цена мастера; у топ-мастера чуть выше.</p><div class="opts">${ALL.map(s=>`<button class="op${st.svc===s[0]?' on':''}" data-svc="${s[0]}">${s[0]}<small>от ${fmt(s[1])} ₽</small></button>`).join('')}</div>`;
+ if(S===1){const s=svc();h=`<h3>2. Мастер</h3><p class="hint">Цена меняется сразу.</p><div class="opts">${M.map((m,i)=>`<button class="op${st.m===i?' on':''}" data-m="${i}">${m[0]}<small>${fmt(s[1+m[2]])} ₽ · ${m[1]}</small></button>`).join('')}</div>`}
+ if(S===2)h=`<h3>3. День</h3><p class="hint">Работаем каждый день.</p><div class="opts days">${days.map((d,i)=>`<button class="op${st.d===i?' on':''}" data-d="${i}">${i===0?'Сегодня':dn(d)}<small>${dd(d)}</small></button>`).join('')}</div>`;
+ if(S===3)h=`<h3>4. Время</h3><p class="hint">Зачёркнуто — уже занято.</p><div class="opts times">${times.map((t,i)=>`<button class="op${st.t===t?' on':''}" data-t2="${t}" ${busy(st.d,i)?'disabled':''}>${t}</button>`).join('')}</div>`;
+ if(S===4){const u=upsList();h=`<h3>5. Контакты</h3><p class="hint">Пришлём подтверждение и напомним накануне.</p><div class="fld"><input id="nm" placeholder="Имя" value="${st.name}" autocomplete="name"><input id="tl" placeholder="+7 900 000-00-00" value="${st.tel}" inputmode="tel" autocomplete="tel"></div>${u.length?`<div class="ups"><b>Добавить к визиту?</b>${u.map(k=>`<label><input type="checkbox" data-u="${k}" ${st.add.includes(k)?'checked':''}> ${UPS[k][0]} <small>+${fmt(UPS[k][1])} ₽</small></label>`).join('')}</div>`:''}`}
+ const can=[st.svc,st.m!==null,st.d!==null,st.t,true][S];
+ $('bk').innerHTML=bar+h+`<div class="nav2">${S?'<button class="back" id="bb">← Назад</button>':'<span></span>'}<button class="btn" id="nx" ${can?'':'disabled style="opacity:.4;cursor:not-allowed"'}>${S===4?'Записаться':'Дальше'}</button></div>`;
+ sum();
+}
+function sum(){
+ let tot=pr();st.add.forEach(k=>tot+=UPS[k][1]);
+ const r=(a,b)=>`<div class="r"><span>${a}</span><b>${b||'—'}</b></div>`;
+ $('sum').innerHTML=`<h3>Ваша запись</h3>${r('Услуга',st.svc)}${r('Мастер',st.m!==null?M[st.m][0]:'')}${r('День',st.d!==null?(st.d===0?'Сегодня':dn(days[st.d])+', '+dd(days[st.d])):'')}${r('Время',st.t)}${st.add.length?r('Добавить',st.add.map(k=>UPS[k][0]).join(', ')):''}<div class="tot"><span>Итого</span><b>${tot?fmt(tot)+' ₽':'—'}</b></div>`;
+}
+$('bk').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ if(b.dataset.svc){st.svc=b.dataset.svc;st.add=[];render()}
+ else if(b.dataset.m){st.m=+b.dataset.m;render()}
+ else if(b.dataset.d){st.d=+b.dataset.d;st.t=null;render()}
+ else if(b.dataset.t2){st.t=b.dataset.t2;render()}
+ else if(b.id==='bb'){st.step--;render()}
+ else if(b.id==='nx'){
+  if(st.step===4){const n=$('nm').value.trim(),t=$('tl').value.replace(/\D/g,'');st.name=n;st.tel=$('tl').value;if(!n||t.length<10){const f=$(n?'tl':'nm');f.focus();f.style.borderColor='#c0583f';return}}
+  st.step++;render();
+ }
+});
+$('bk').addEventListener('change',e=>{const u=e.target.dataset.u;if(!u)return;st.add=e.target.checked?[...st.add,u]:st.add.filter(x=>x!==u);sum()});
+$('bk').addEventListener('input',e=>{if(e.target.id==='nm')st.name=e.target.value;if(e.target.id==='tl')st.tel=e.target.value});
+document.addEventListener('click',e=>{const p=e.target.closest('[data-pick]');if(p){st.svc=p.dataset.pick;st.m=lvl?2:null;st.add=[];st.step=lvl?2:1;render();$('book').scrollIntoView({behavior:'smooth'})}});
+render();
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

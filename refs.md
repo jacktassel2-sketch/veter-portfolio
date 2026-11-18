@@ -9,6 +9,13 @@
 - barbershop/img/w4.jpg: https://www.pexels.com/photo/3998417/ (файл: https://images.pexels.com/photos/3998417/pexels-photo-3998417.jpeg)
 - stomatologiya/img/hero.jpg: https://www.pexels.com/photo/7800669/ (файл: https://images.pexels.com/photos/7800669/pexels-photo-7800669.jpeg)
 
+- manikyur/img/hero.jpg: https://www.pexels.com/photo/10181437/ (файл: https://images.pexels.com/photos/10181437/pexels-photo-10181437.jpeg)
+- manikyur/img/g1.jpg: https://www.pexels.com/photo/17471377/ (файл: https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg)
+- manikyur/img/g2.jpg: https://www.pexels.com/photo/36655811/ (файл: https://images.pexels.com/photos/36655811/pexels-photo-36655811.jpeg)
+- manikyur/img/g3.jpg: https://www.pexels.com/photo/7664093/ (файл: https://images.pexels.com/photos/7664093/pexels-photo-7664093.jpeg)
+- manikyur/img/g4.jpg: https://www.pexels.com/photo/34835287/ (файл: https://images.pexels.com/photos/34835287/pexels-photo-34835287.jpeg)
+- manikyur/img/proc.jpg: https://www.pexels.com/photo/16041439/ (файл: https://images.pexels.com/photos/16041439/pexels-photo-16041439.jpeg)
+
 # Исходные сайты для кейсов «было | стало»
 
 ## Барбершоп
@@ -31,3 +38,13 @@
 5. Опечатка «внашем арсенале»; в заголовке «Уcлуги и цены» латинская «c».
 Ещё: в консоли 6 ошибок скриптов (глазами не видно).
 Новый сайт: stomatologiya/ (направления, цены, врачи, часы работы, адрес с сайта; фото Pexels, см. выше). Номер лицензии оставлен пустым местом.
+
+## Студия маникюра
+Сайт: https://haze-beauty.ru (Москва), прайс: https://haze-beauty.ru/price, проверен 18.11.2026 на телефоне 390 px.
+Ошибки, видимые глазами:
+1. Три карточки услуг на главной пустые: белый фон без фото и названия, только кнопки «Прайс» и «Записаться».
+2. На главной ни одной цены: прайс на отдельной странице.
+3. На первом экране студии маникюра фото укладки волос.
+4. Кнопка записи уводит на сторонний сайт сервиса записи (YClients).
+5. Цены «Мастер / Топ-Мастер» через дробь без пояснения.
+Новый сайт: manikyur/ (услуги, цены мастера и топ-мастера, абонементы, сертификаты, часы, адрес с сайта; фото Pexels, см. выше).
