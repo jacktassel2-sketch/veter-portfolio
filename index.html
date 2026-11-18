@@ -76,8 +76,8 @@ footer a{color:var(--txt);margin-right:16px}
 <section class="hero"><div class="wrap">
  <h1>Сайты, которые <em>возвращают клиентов</em>: было и стало</h1>
  <p>Посмотрите видео: за полторы минуты — сколько теряет кафе без нормального сайта и что мы делаем.</p>
- <div class="vid rv"><video id="pv" controls playsinline preload="metadata" poster="video/poster.jpg"><source src="video/pitch.mp4" type="video/mp4"></video>
-  <div class="vph" id="vph"><b>▶ Видео скоро</b><span>Пока посмотрите расчёт и наши работы ниже</span></div></div>
+ <div class="vid rv"><video id="pv" controls playsinline preload="metadata" style="display:none"></video>
+  <div class="vph" id="vph" style="display:flex"><b>▶ Видео скоро</b><span>Пока посмотрите расчёт и наши работы ниже</span></div></div>
  <div style="margin-top:22px"><a class="btn" href="#pay">Оплатить 10 000 ₽</a> <a class="btn ghost" href="#works">Наши работы</a></div>
 </div></section>
 
@@ -171,8 +171,7 @@ function calc(setChk=true){
 $('niche').onchange=()=>calc(true);$('chk').oninput=()=>calc(false);$('lost').oninput=()=>calc(false);
 tabs();calc();
 const pv=document.getElementById('pv');
-const noVid=()=>{pv.style.display='none';document.getElementById('vph').style.display='flex'};
-pv.querySelector('source').addEventListener('error',noVid);pv.addEventListener('error',noVid);
+fetch('video/pitch.mp4',{method:'HEAD'}).then(r=>{if(r.ok){pv.poster='video/poster.jpg';pv.src='video/pitch.mp4';pv.style.display='block';document.getElementById('vph').style.display='none'}}).catch(()=>{});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 </script>
