@@ -64,6 +64,33 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-bottom:6px}
 .vph b{font-size:24px;color:var(--acc)}.vph span{color:var(--mut)}
 .mpay{display:none}
 @media(max-width:820px){.mpay{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:45}.mpay .btn{width:100%;text-align:center}footer{padding-bottom:90px}}
+.case2{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:22px}
+.case2 .top{display:flex;gap:18px;align-items:center;padding:22px 22px 0;flex-wrap:wrap}
+.case2 .niche{background:var(--acc);color:#140c05;font-weight:800;font-size:13px;border-radius:20px;padding:5px 12px;text-transform:uppercase;letter-spacing:.06em}
+.case2 h3{font-size:22px}
+.blur{filter:blur(6px);user-select:none}
+.case2 .shot{margin:18px 22px 0;border-radius:14px;border:1px solid var(--line)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 22px 0}
+.ba>div{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px}
+.ba h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.ba .was h4{color:#ff8f7a}.ba .now h4{color:var(--acc)}
+.ba ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.ba .was li:before{content:"✕ ";color:#ff8f7a;font-weight:800}
+.ba .now li:before{content:"✓ ";color:var(--acc);font-weight:800}
+.loss{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 22px 0}
+.loss div{background:#2a1a10;border:1px solid #4a2c18;border-radius:14px;padding:14px}
+.loss span{display:block;color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.loss b{display:block;font-size:22px;color:var(--warn);margin-top:4px}
+.loss small{color:var(--mut);font-size:12px}
+.case2 .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 22px 22px}
+.case2 .foot p{color:var(--mut);font-size:14px;max-width:560px}
+.soon{background:radial-gradient(ellipse at 80% 0,#3a2414,#1a1511 70%);border:1px solid var(--line);border-radius:24px;padding:32px 24px}
+.soon p{color:var(--mut);max-width:640px;margin:10px 0 18px}
+.soon h3{font-size:20px;margin-top:8px}
+.tag2{display:inline-block;background:var(--warn);color:#140c05;font-weight:800;font-size:12px;border-radius:20px;padding:4px 12px;text-transform:uppercase;margin-bottom:10px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{border:1px solid var(--acc);color:var(--acc);border-radius:12px;padding:12px 18px;font-weight:800;text-decoration:none}
+@media(max-width:820px){.ba{grid-template-columns:1fr}.loss{grid-template-columns:1fr;gap:6px}.loss div{display:grid;grid-template-columns:80px 1fr;align-items:center;column-gap:10px}.loss b{font-size:20px;margin:0;white-space:nowrap}.loss small{grid-column:2}}
 footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--mut);font-size:14px;margin-top:40px}
 footer a{color:var(--txt);margin-right:16px}
 .rv{opacity:0;transform:translateY(20px);transition:.7s}.rv.in{opacity:1;transform:none}
@@ -103,10 +130,22 @@ footer a{color:var(--txt);margin-right:16px}
 </div></section>
 
 <section id="works"><div class="wrap">
- <h2 class="rv">Наши работы</h2>
- <p class="lead rv">Выберите нишу. В кафе — настоящие проекты «было / стало», в остальных нишах — готовые сайты, которые мы адаптируем под ваш бизнес.</p>
- <div class="tabs" id="tabs"></div>
- <div class="grid" id="grid"></div>
+ <h2 class="rv">Кейсы: было → стало</h2>
+ <p class="lead rv">Названия скрыты. Что было на старом сайте, что сделали мы и сколько бизнес терял без нового сайта.</p>
+ <div id="cases"></div>
+</div></section>
+
+<section id="soon"><div class="wrap">
+ <div class="soon rv">
+  <div class="tag2">Скоро</div>
+  <h2>Голосовой AI-оператор</h2>
+  <p>Отвечает на все звонки круглосуточно, хоть 100 одновременно, без больничных и выходных. Минимум вдвое дешевле сотрудника на телефоне. Заказ сразу приходит менеджеру на почту. Кто заказал сайт, подключаем первыми.</p>
+  <h3>Следите за нами</h3>
+  <p>Мы работаем на мировой рынок и сейчас развиваем наши соцсети: там разборы, новые кейсы и запуск AI-оператора.</p>
+  <div class="soc">
+   <a href="https://www.youtube.com/@SLOTTAI1">YouTube</a><a href="https://t.me/AISLOTT">Telegram</a><a href="https://www.instagram.com/aislott1/">Instagram</a><a href="https://aislott.com">aislott.com</a>
+  </div>
+ </div>
 </div></section>
 
 <section><div class="wrap">
@@ -150,12 +189,27 @@ const N=[
 let cur=0;
 const fmt=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
 const $=id=>document.getElementById(id);
-function tabs(){
- const withWorks=N.map((n,i)=>[n,i]).filter(([n])=>n.works.length);
- $('tabs').innerHTML=withWorks.map(([n,i])=>`<button class="tab${i===cur?' on':''}" data-i="${i}">${n.k}</button>`).join('');
- document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;tabs();$('niche').value=cur;calc()});
- $('grid').innerHTML=N[cur].works.map(w=>`<a class="case" href="${w.href}" target="_blank" rel="noopener"><div class="shot"><img src="${w.img}" alt="" loading="lazy" onerror="this.remove()"><span class="tag">${w.tag}</span></div><div class="in"><h3>${w.t}</h3><ul>${w.li.map(l=>`<li>${l}</li>`).join('')}</ul><span class="go">Открыть →</span></div></a>`).join('');
-}
+const C=[
+ {n:"Кафе",t:"Сайт для кафе с мангалом",nm:"Кафе «Ратибор»",img:"shots/cafe2.jpg",href:"https://jacktassel2-sketch.github.io/ratibor-demo/",c:2000,
+  was:["Заказ оформить нельзя: нет оплаты, доставки и контактов","На главной нет адреса, телефона и часов","В «Всё меню» 50 блюд из 103","13 блюд без фото, у 7 фото чужое","Бронь только по телефону"],
+  now:["Имя, телефон, адрес и часы видны сразу","Все 103 блюда с фото и ценами, поиск","Заказ и оплата картой прямо на сайте","Бесплатная доставка от суммы, корзина подсказывает, сколько добавить","Бронь стола и зала заявкой"]},
+ {n:"Кафе",t:"Сайт для кафе с доставкой",nm:"Кафе «Минутка»",img:"shots/cafe1.jpg",href:"https://jacktassel2-sketch.github.io/minutka-demo/",c:2000,
+  was:["Блок «Акции»: три карточки «Акции скоро!»","Страница «О кафе» и «Отзывы» пустые","Условия доставки не написаны","Нет мессенджеров, соцсетей и карты","Главная иногда не открывалась: 1 запрос из 3 обрывался через 21 с"],
+  now:["Пустых заглушек нет","Блок «Доставка и оплата»: зона, самовывоз, оплата онлайн","Кнопка Яндекс Карт и мессенджеры","Счётчики блюд совпадают с меню","Лёгкая страница: фото сжаты в 5–10 раз"]},
+ {n:"Барбершоп",t:"Сайт для барбершопа",nm:"",img:"shots/barbershop.jpg",href:"barbershop/",c:1000,
+  was:["Запись только по телефону, пока мастер стрижёт","Цены и свободное время не видны","Клиент уходит к соседям, если не дозвонился"],
+  now:["Запись онлайн за 30 секунд, без звонка","Свободное время каждого мастера","Предложение добавить бороду при записи","Напоминание перед визитом"]},
+ {n:"Стоматология",t:"Сайт для стоматологии",nm:"",img:"shots/stomatologiya.jpg",href:"stomatologiya/",c:10000,
+  was:["Запись только через администратора","Цены не видны до звонка","Пациент уходит в другую клинику, если линия занята"],
+  now:["Цены по разделам, запись в один экран","Врачи и ближайшее свободное время","Предложение гигиены при записи","Лицензия и обязательное предупреждение на сайте"]}
+];
+$('cases').innerHTML=C.map(x=>{const m=3*x.c*30;return `<div class="case2 rv">
+ <div class="top"><span class="niche">${x.n}</span><h3>${x.t}${x.nm?` · <span class="blur">${x.nm}</span>`:''}</h3></div>
+ <a href="${x.href}" target="_blank" rel="noopener"><div class="shot"><img src="${x.img}" alt="" loading="lazy" onerror="this.remove()"></div></a>
+ <div class="ba"><div class="was"><h4>Было</h4><ul>${x.was.map(l=>`<li>${l}</li>`).join('')}</ul></div><div class="now"><h4>Стало</h4><ul>${x.now.map(l=>`<li>${l}</li>`).join('')}</ul></div></div>
+ <div class="loss"><div><span>В день</span><b>${fmt(3*x.c)}</b><small>3 клиента × ${fmt(x.c)}</small></div><div><span>В месяц</span><b>${fmt(m)}</b><small>× 30 дней</small></div><div><span>В год</span><b>${fmt(m*12)}</b><small>× 12 месяцев</small></div></div>
+ <div class="foot"><p>Столько недополучает бизнес, если в день теряет всего 3 клиента со средним чеком ${fmt(x.c)}. Сайт стоит 10 000 ₽.</p><a class="btn" href="${x.href}" target="_blank" rel="noopener">Открыть сайт →</a></div>
+</div>`}).join('');
 $('niche').innerHTML=N.map((n,i)=>`<option value="${i}">${n.k}</option>`).join('');
 function calc(setChk=true){
  const n=N[+$('niche').value];
@@ -169,7 +223,7 @@ function calc(setChk=true){
  $('pb').innerHTML=c?(p<=1?`Сайт за 10 000 ₽ окупается <b>с первого клиента</b>.`:`Сайт за 10 000 ₽ окупается за <b>${p} ${n.u}</b>.`):'';
 }
 $('niche').onchange=()=>calc(true);$('chk').oninput=()=>calc(false);$('lost').oninput=()=>calc(false);
-tabs();calc();
+calc();
 const pv=document.getElementById('pv');
 fetch('video/pitch.mp4',{method:'HEAD'}).then(r=>{if(r.ok){pv.poster='video/poster.jpg';pv.src='video/pitch.mp4';pv.style.display='block';document.getElementById('vph').style.display='none'}}).catch(()=>{});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
