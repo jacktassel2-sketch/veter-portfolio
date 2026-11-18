@@ -8,9 +8,6 @@
 - barbershop/img/w3.jpg: https://www.pexels.com/photo/9992819/ (файл: https://images.pexels.com/photos/9992819/pexels-photo-9992819.jpeg)
 - barbershop/img/w4.jpg: https://www.pexels.com/photo/3998417/ (файл: https://images.pexels.com/photos/3998417/pexels-photo-3998417.jpeg)
 - stomatologiya/img/hero.jpg: https://www.pexels.com/photo/7800669/ (файл: https://images.pexels.com/photos/7800669/pexels-photo-7800669.jpeg)
-- stomatologiya/img/d1.jpg: https://www.pexels.com/photo/20596946/ (файл: https://images.pexels.com/photos/20596946/pexels-photo-20596946.jpeg)
-- stomatologiya/img/d2.jpg: https://www.pexels.com/photo/14235194/ (файл: https://images.pexels.com/photos/14235194/pexels-photo-14235194.jpeg)
-- stomatologiya/img/d3.jpg: https://www.pexels.com/photo/19332236/ (файл: https://images.pexels.com/photos/19332236/pexels-photo-19332236.jpeg)
 
 # Исходные сайты для кейсов «было | стало»
 
@@ -23,3 +20,14 @@
 4. Кнопка записи уводит на сторонний сайт сервиса записи (YClients).
 5. Подзаголовок «Наша работа - следить за тем, чтобы вы всегда выглядели идеально» повторяется в трёх блоках.
 Новый сайт: barbershop/ (услуги, цены, имена мастеров, адрес, ответы на вопросы взяты с сайта; фото Pexels, см. выше).
+
+## Стоматология
+Сайт: https://aura-dent.ru (Красноярск), проверен 18.11.2026 на телефоне 390 px.
+Ошибки, видимые глазами:
+1. На первом экране нет телефона, адреса и кнопки записи: только логотип и «Подробнее».
+2. На главной ни одной цены: цены во всплывающих окнах за кнопками «Посмотреть цены».
+3. Ошибка в прайсе: «Лечение заболеваний десен 2500-1700 ₽».
+4. До первой услуги два больших абзаца общих слов.
+5. Опечатка «внашем арсенале»; в заголовке «Уcлуги и цены» латинская «c».
+Ещё: в консоли 6 ошибок скриптов (глазами не видно).
+Новый сайт: stomatologiya/ (направления, цены, врачи, часы работы, адрес с сайта; фото Pexels, см. выше). Номер лицензии оставлен пустым местом.
