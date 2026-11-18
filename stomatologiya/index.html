@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Дента Плюс — стоматология (демо)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f9fa;--card:#fff;--line:#e2eaec;--txt:#10272e;--mut:#5d7379;--acc:#0e8c85;--acc2:#0b746e;--soft:#e4f4f2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.badge{position:fixed;right:10px;bottom:10px;z-index:50;background:#fffe;border:1px solid var(--line);color:var(--mut);font-size:12px;padding:4px 10px;border-radius:20px}
+header{position:sticky;top:0;z-index:40;background:#f6f9faE6;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;font-size:21px;display:flex;align-items:center;gap:8px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:grid;place-items:center;color:#fff;font-style:normal;font-size:17px}
+nav a{margin-left:22px;text-decoration:none;color:var(--mut);font-weight:600;font-size:15px}
+.btn{display:inline-block;background:var(--acc);color:#fff;font-weight:700;text-decoration:none;border:0;border-radius:12px;padding:14px 22px;font-size:16px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--acc2)}
+.btn.ghost{background:#fff;color:var(--txt);border:1px solid var(--line)}
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(36px,5.6vw,60px)}
+.hero h1 span{color:var(--acc)}
+.hero p{color:var(--mut);font-size:18px;margin:16px 0 24px;max-width:520px}
+.trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;color:var(--mut)}
+.trust b{color:var(--txt);display:block;font-size:18px}
+.hpic{aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(160deg,#cfeeea,#e9f5f7);position:relative}
+.hpic img{width:100%;height:100%;object-fit:cover;display:block}
+.slot{position:absolute;left:16px;right:16px;bottom:16px;background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 10px 30px #10272e22;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.slot b{font-size:16px}
+.dot{width:9px;height:9px;border-radius:50%;background:#2bb673;display:inline-block;margin-right:6px;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.3}}
+section{padding:72px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(28px,4vw,42px)}
+.sec-h p{color:var(--mut);max-width:440px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:30px;padding:8px 16px;font:600 14px Manrope;cursor:pointer;color:var(--txt)}
+.tab.on{background:var(--txt);color:#fff;border-color:var(--txt)}
+.price{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.price .r{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.price .r:last-child{border:0}
+.price .r small{color:var(--mut);display:block}
+.price .r b{white-space:nowrap}
+.price button{margin-left:14px;background:var(--soft);color:var(--acc2);border:0;border-radius:10px;padding:8px 12px;font:700 13px Manrope;cursor:pointer}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.doc .ph{aspect-ratio:1;background:linear-gradient(160deg,#d6efec,#eef7f8)}
+.doc .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.doc .in{padding:16px}
+.doc p{color:var(--mut);font-size:14px}
+.doc .free{color:#1f9a5f;font-size:13px;font-weight:700;margin-top:6px;display:block}
+.book{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.step{margin-bottom:20px}
+.step h4{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;color:var(--txt);border-radius:10px;padding:9px 12px;font:600 14px Manrope;cursor:pointer}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+input{width:100%;background:#fff;border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:13px;font:16px Manrope;margin-bottom:10px}
+input:focus{outline:none;border-color:var(--acc)}
+.sum{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.sum .l{display:flex;justify-content:space-between;gap:10px;color:var(--mut);font-size:15px}
+.sum .l b{color:var(--txt);text-align:right}
+.sum .tot{font-size:26px;font-weight:800;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px}
+.up{border:1px dashed var(--acc);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center;background:#fff}
+.up input{width:auto;margin:0;accent-color:var(--acc);transform:scale(1.3)}
+.up small{color:var(--mut);display:block}
+.err{color:#c4452c;font-size:14px;min-height:20px}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok h3{font-size:30px;color:var(--acc);margin-bottom:10px}
+.info{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.info div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.info span{color:var(--mut);font-size:13px;display:block}
+.warn{margin-top:26px;background:var(--soft);border-radius:16px;padding:18px 20px;font-weight:700;text-align:center;font-size:clamp(15px,2vw,20px)}
+footer{border-top:1px solid var(--line);padding:28px 0 70px;color:var(--mut);font-size:14px}
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(20px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:820px){
+ nav{display:none}
+ .hero .wrap{grid-template-columns:1fr}
+ .hpic{aspect-ratio:4/3}
+ .book{grid-template-columns:1fr;padding:18px}
+ section{padding:52px 0}
+ .price .r{flex-wrap:wrap}
+ .mbar{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:45}
+ .mbar .btn{width:100%;text-align:center}
+ .badge{bottom:76px}
+}
+</style>
+</head>
+<body>
+<div class="badge">Демо-сайт «Ветер перемен»</div>
+<header><div class="wrap"><div class="logo"><i>+</i>Дента Плюс</div>
+<nav><a href="#price">Цены</a><a href="#docs">Врачи</a><a href="#book">Запись</a><a href="#info">Контакты</a></nav>
+<a class="btn" href="#book" style="padding:10px 16px">Записаться</a></div></header>
+
+<section class="hero"><div class="wrap">
+ <div>
+  <h1>Запись к стоматологу <span>за 30 секунд</span>, без звонка</h1>
+  <p>Выберите услугу, врача и свободное время. Цены видны заранее. Накануне пришлём напоминание.</p>
+  <a class="btn" href="#book">Выбрать время</a> <a class="btn ghost" href="#price">Цены</a>
+  <div class="trust"><div><b>Лицензия</b>на сайте</div><div><b>08:00–21:00</b>без выходных</div><div><b>СБП</b>оплата по QR</div></div>
+ </div>
+ <div class="hpic"><img src="img/hero.jpg" alt="" onerror="this.remove()">
+  <div class="slot"><div><span class="dot"></span>Ближайшее свободное</div><b id="near">сегодня 16:30</b></div>
+ </div>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+ <div class="sec-h rv"><h2>Услуги и цены</h2><p>Нажмите «Записаться» — услуга будет выбрана в форме записи.</p></div>
+ <div class="tabs" id="tabs"></div>
+ <div class="price" id="plist"></div>
+</div></section>
+
+<section id="docs" style="padding-top:0"><div class="wrap">
+ <div class="sec-h rv"><h2>Врачи</h2><p>Опыт, специализация и ближайшее свободное время у каждого врача.</p></div>
+ <div class="docs" id="dList"></div>
+</div></section>
+
+<section id="book" style="padding-top:0"><div class="wrap">
+ <div class="sec-h rv"><h2>Онлайн-запись</h2><p>Заявка сразу приходит администратору в мессенджер или в вашу медицинскую систему.</p></div>
+ <div class="book">
+  <div>
+   <div class="step"><h4>1. Услуга</h4><div class="chips" id="cS"></div></div>
+   <div class="step"><h4>2. Врач</h4><div class="chips" id="cD"></div></div>
+   <div class="step"><h4>3. День</h4><div class="chips" id="cDay"></div></div>
+   <div class="step"><h4>4. Время</h4><div class="chips" id="cT"></div></div>
+   <div class="step"><h4>5. Контакты</h4>
+    <input id="nm" placeholder="Имя" autocomplete="name">
+    <input id="tel" placeholder="+7 900 000-00-00" inputmode="tel" autocomplete="tel">
+   </div>
+  </div>
+  <div>
+   <div class="sum" id="sum">
+    <div class="l">Услуга <b id="sS">—</b></div>
+    <div class="l">Врач <b id="sD">—</b></div>
+    <div class="l">Когда <b id="sW">—</b></div>
+    <label class="up" id="upBox"><input type="checkbox" id="ups"><div><b>Добавить профессиональную гигиену</b><small>+4 500 ₽ · в тот же визит</small></div></label>
+    <div class="l">Оплата <b>СБП по QR или в клинике</b></div>
+    <div class="tot"><span>Итого</span><span id="tot">0 ₽</span></div>
+    <div class="err" id="err"></div>
+    <button class="btn" id="go">Записаться</button>
+    <small style="color:var(--mut)">Напомним накануне и за 2 часа до приёма.</small>
+   </div>
+   <div class="ok" id="ok"><h3>Вы записаны</h3><p id="okT"></p><p style="color:var(--mut);margin-top:12px">Демо: в настоящем сайте заявка уходит администратору.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="info" style="padding-top:0"><div class="wrap">
+ <div class="sec-h rv"><h2>Контакты</h2></div>
+ <div class="info">
+  <div><span>Адрес</span>ул. Примерная, 1</div>
+  <div><span>Часы</span>Каждый день 08:00–21:00</div>
+  <div><span>Телефон</span>+7 900 000-00-00</div>
+  <div><span>Лицензия</span>На сайте клиента — номер и дата его лицензии</div>
+ </div>
+ <div class="warn">Имеются противопоказания. Необходима консультация специалиста.</div>
+</div></section>
+
+<footer><div class="wrap">Дента Плюс — демо-сайт стоматологии. Сделано «Ветер перемен».</div></footer>
+<div class="mbar"><a class="btn" href="#book">Записаться онлайн</a></div>
+
+<script>
+const P={"Терапия":[["Консультация и план лечения","осмотр, снимок",1000],["Лечение кариеса","пломба светового отверждения",5500],["Лечение каналов","один канал",7500]],
+"Гигиена":[["Профессиональная гигиена","ультразвук + Air Flow + полировка",4500],["Отбеливание","кабинетное",15000]],
+"Хирургия":[["Удаление зуба","простое",3500],["Удаление зуба мудрости","сложное",8000]],
+"Детская":[["Детский осмотр","до 14 лет",800],["Лечение молочного зуба","",3500]]};
+const ALL=Object.values(P).flat();
+const D=[["Анна Соколова","Терапевт, 12 лет опыта",'img/d1.jpg'],["Михаил Орлов","Хирург, 9 лет опыта",'img/d2.jpg'],["Елена Ким","Детский стоматолог, 8 лет",'img/d3.jpg']];
+const st={s:0,d:null,day:0,t:null,tab:"Терапия"};
+const fmt=n=>n.toLocaleString('ru-RU')+' ₽';
+const $=id=>document.getElementById(id);
+function tabs(){
+ $('tabs').innerHTML=Object.keys(P).map(k=>`<button class="tab${k===st.tab?' on':''}" data-k="${k}">${k}</button>`).join('');
+ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{st.tab=b.dataset.k;tabs()});
+ $('plist').innerHTML=P[st.tab].map(x=>`<div class="r"><div>${x[0]}<small>${x[1]}</small></div><div><b>${fmt(x[2])}</b><button data-n="${x[0]}">Записаться</button></div></div>`).join('');
+ document.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{st.s=ALL.findIndex(x=>x[0]===b.dataset.n);render();location.hash='book'});
+}
+$('dList').innerHTML=D.map((x,i)=>`<div class="doc rv"><div class="ph"><img src="${x[2]}" alt="${x[0]}" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>${x[0]}</h3><p>${x[1]}</p><span class="free">● свободно сегодня в ${['16:30','18:00','12:00'][i]}</span></div></div>`).join('');
+const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i);return d});
+const dn=d=>d.toLocaleDateString('ru-RU',{weekday:'short',day:'numeric'});
+const slots=['08:00','09:30','11:00','12:00','13:30','15:00','16:30','18:00','19:30'];
+const busy=(d,m,t)=>((d*5+(m??0)*4+slots.indexOf(t))%3)==0;
+function chips(el,arr,on,cb,dis){el.innerHTML='';arr.forEach((x,i)=>{const b=document.createElement('button');b.className='chip'+(on===i?' on':'');b.textContent=x;if(dis&&dis(i))b.disabled=true;b.onclick=()=>{cb(i);render()};el.appendChild(b)})}
+function render(){
+ chips($('cS'),ALL.map(x=>x[0]),st.s,i=>st.s=i);
+ chips($('cD'),['Любой',...D.map(x=>x[0].split(' ')[0])],st.d===null?0:st.d+1,i=>{st.d=i?i-1:null;st.t=null});
+ chips($('cDay'),days.map((d,i)=>i?dn(d):'Сегодня'),st.day,i=>{st.day=i;st.t=null});
+ chips($('cT'),slots,st.t,i=>st.t=i,i=>busy(st.day,st.d,slots[i]));
+ const hyg=ALL[st.s][0]==='Профессиональная гигиена';
+ $('upBox').style.display=hyg?'none':'flex';
+ const up=$('ups').checked&&!hyg;
+ $('sS').textContent=ALL[st.s][0]+(up?' + гигиена':'');
+ $('sD').textContent=st.d===null?'Любой свободный':D[st.d][0];
+ $('sW').textContent=st.t===null?'—':(st.day?dn(days[st.day]):'Сегодня')+', '+slots[st.t];
+ $('tot').textContent=fmt(ALL[st.s][2]+(up?4500:0));
+}
+$('ups').onchange=render;
+$('go').onclick=()=>{
+ const tel=$('tel').value.replace(/\D/g,'');
+ if(st.t===null)return $('err').textContent='Выберите время';
+ if(!$('nm').value.trim())return $('err').textContent='Как к вам обращаться?';
+ if(tel.length<11)return $('err').textContent='Проверьте номер телефона';
+ $('sum').style.display='none';$('ok').style.display='block';
+ $('okT').textContent=$('sS').textContent+' · '+$('sW').textContent+' · '+$('sD').textContent;
+};
+tabs();render();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
