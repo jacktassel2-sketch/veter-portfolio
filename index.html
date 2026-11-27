@@ -403,6 +403,71 @@ const pv=document.getElementById('pv');
 fetch('video/pitch.mp4',{method:'HEAD'}).then(r=>{if(r.ok){pv.poster='video/poster.jpg';pv.src='video/pitch.mp4';pv.style.display='block';document.getElementById('vph').style.display='none'}}).catch(()=>{});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+// --- AISLOTT B2B Telemetry & Event Tracking ---
+(() => {
+  const P = new URLSearchParams(window.location.search);
+  const lead = {
+    company: P.get('c') || P.get('company') || 'Прямой переход',
+    email: P.get('e') || P.get('utm_term') || '',
+    variant: P.get('v') || P.get('utm_content') || 'direct',
+    source: P.get('utm_source') || 'web'
+  };
+
+  function track(name, data = {}) {
+    const payload = { event: name, ...lead, ...data, ts: new Date().toISOString() };
+    try {
+      const hist = JSON.parse(localStorage.getItem('aislott_events') || '[]');
+      hist.push(payload);
+      localStorage.setItem('aislott_events', JSON.stringify(hist.slice(-100)));
+    } catch(e){}
+    if (typeof ym === 'function' && window.YM_ID) {
+      try { ym(window.YM_ID, 'reachGoal', name, payload); } catch(e){}
+    }
+  }
+
+  track('page_view');
+
+  // Видео: старт, прогресс (25%, 50%, 75%, 95%), финал
+  const ms = { 25: false, 50: false, 75: false, 95: false };
+  pv.addEventListener('play', () => track('video_play'));
+  pv.addEventListener('timeupdate', () => {
+    if (!pv.duration) return;
+    const pct = Math.floor((pv.currentTime / pv.duration) * 100);
+    [25, 50, 75, 95].forEach(m => {
+      if (pct >= m && !ms[m]) {
+        ms[m] = true;
+        track(`video_progress_${m}`, { sec: Math.round(pv.currentTime) });
+      }
+    });
+  });
+  pv.addEventListener('ended', () => track('video_ended'));
+
+  // Клики по тарифам (10k, 25k, 65k)
+  document.querySelectorAll('.tariff a.btn').forEach(b => {
+    b.addEventListener('click', () => track('click_tariff', { tariff: b.textContent.trim() }));
+  });
+
+  // Клик по Telegram
+  document.querySelectorAll('a[href*="t.me"]').forEach(a => {
+    a.addEventListener('click', () => track('click_telegram', { href: a.href }));
+  });
+
+  // Клик по примерам работ в портфолио
+  document.addEventListener('click', e => {
+    const w = e.target.closest('a.work');
+    if (w) track('click_portfolio_work', { title: w.querySelector('b')?.textContent || w.href });
+  });
+
+  // Калькулятор
+  let cTrack = false;
+  $('chk').addEventListener('change', () => {
+    if (!cTrack) {
+      cTrack = true;
+      track('calc_change', { check: $('chk').value, niche: N[+$('niche').value]?.k });
+    }
+  });
+})();
 </script>
 </body>
 </html>
